@@ -1,0 +1,24 @@
+version: '2'
+services:
+  Plex:
+    container_name: PlexMediaServer
+    image: plexinc/pms-docker
+    restart: always
+    environment:
+      - TZ=Europe/Paris
+      - PLEX_CLAIM=<CLAIM_CODE>
+    network_mode: host
+    volumes:
+      - Plex_Config:/config
+      - Plex_Transcode:/transcode
+      - Mediacenter:/data:rw
+volumes:
+   Plex_Config:
+    external: true
+    name: Plex_Config
+   Plex_Transcode:
+    external: true
+    name: Plex_Transcode
+   Mediacenter:
+    external: true
+    name: Mediacenter

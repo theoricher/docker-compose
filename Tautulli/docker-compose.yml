@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  plex:
+    container_name: Tautulli
+    image: tautulli/tautulli
+    restart: always
+    environment:
+      - TZ=Europe/Paris
+    networks:
+      - default
+    ports:
+      - "8181:8181/tcp"
+    volumes:
+      - Tautulli_Config:/config
+volumes:
+   Tautulli_Config:
+    name: Tautulli_Config

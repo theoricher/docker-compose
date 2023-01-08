@@ -1,0 +1,10 @@
+version: "3"
+services:
+  crond:
+    container_name: "OVHDynDNS"
+    image: ambroisemaupate/ovh-dyndns
+    environment:
+      HOST: <SUB_DOMAIN>
+      LOGIN: <LOGIN>
+      PASSWORD: <PASSWORD>
+    restart: always
